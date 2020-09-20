@@ -185,7 +185,7 @@ int main( void ) {
 
     HANDLE_ERROR( cudaMalloc( (void**)&sharp_dev_bitmap, sharp_bitmap.image_size() ) );
     sharp_data.dev_bitmap = sharp_dev_bitmap;
-    sharpen<<<grid, 1>>>( blur_dev_bitmap, sharp_dev_bitmap );
+    sharpen<<<grid, 1>>>( orig_dev_bitmap, sharp_dev_bitmap );
 
     // Handle memory
     HANDLE_ERROR( cudaMemcpy( orig_bitmap.get_ptr(), orig_dev_bitmap, orig_bitmap.image_size(), cudaMemcpyDeviceToHost ) );    
