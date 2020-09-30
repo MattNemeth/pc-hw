@@ -1,0 +1,1 @@
+c julia_cpu.cu -lm -lGL -lGLU -lglut
